@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Give Tittle to Tab -->
+    <title>Password Generator</title>
+    <!-- font adding -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- adding style sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Heading -->
+        <h1>
+            Password Generator
+        </h1>
+
+        <!-- Password Displayer Div -->
+        <div class="display-container">
+
+            <!-- only going to read(Writting is not possible)-->
+            <!-- data-passwordDisplay make "custome attribute" for js -->
+            <input readonly placeholder="Password" class="display" data-passwordDisplay>
+
+            <!-- coppy option -->
+            <button class="copyBtn" data-copy>
+                <!-- for displying msg "data copied" when you copied password -->
+                <span class="tooltip" data-copyMsg></span>
+                <!-- coppy image -->
+                <img src="./assets/copy.svg" alt="copy" width="23" height="23">
+            </button>
+
+        </div>
+
+        <!-- div 3 -->
+        <div class="input-container">
+
+            <!--password length section-->
+            <div class="length-container">
+                <!-- for text -->
+                <p>
+                    Password Length
+                </p>
+                <!-- for displaying character number -->
+                <!-- further used in js -->
+                <p data-lengthNumber>
+                    0
+                </p>
+            </div>
+            
+            <!--for slider type set as range-->
+            <!-- here "step" is set as 1 because it start from 1 -->
+            <!-- slider ne aagal pachal karva thi value change thay che atle custom attribute aapio -->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+
+            <!-- checkboxes-->
+            <!-- checkbox1 -->
+            <div class="check">
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">
+                    Includes Uppercase letters
+                </label>
+            </div>
+
+            <!-- checkbox2 -->
+            <div class="check">
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase">
+                    Includes Lowercase letters
+                </label>
+            </div>
+
+            <!-- checkbox3 -->
+            <div class="check">
+                <input type="checkbox" id="numbers">
+                <label for="numbers">
+                    Includes Numbers
+                </label>
+            </div>
+
+            <!-- checkbox4 -->
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">
+                    Includes Symbols
+                </label>
+            </div>
+
+            <!-- strength section-->
+            <div class="strength-container">
+                <!-- text part -->
+                <p>
+                    Strength
+                </p>
+                <!-- Round -->
+                <!-- color is going to change thus use in js -->
+                <div class="indicator" data-indicator></div>
+            </div>
+
+            <!-- generate password button-->
+            <!-- password is going to change when i click 
+             thus use "onclick method" -->
+            <button class="generateButton">
+                Generate Password
+            </button>
+
+        </div>
+
+    </div>
+    <!-- link script js -->
+    <script src="script.js"></script>
+</body>
+</html>
